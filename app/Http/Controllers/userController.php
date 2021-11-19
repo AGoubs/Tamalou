@@ -14,5 +14,7 @@ class UserController extends Controller
     public function showUsers()
     {
         $users = User::all();
+
+        dd($users);
     }
 }
