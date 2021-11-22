@@ -38,6 +38,7 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
+        $request->merge(['password' => Hash::make($request->password)]);
 
         $user = User::create($request->all());
 
