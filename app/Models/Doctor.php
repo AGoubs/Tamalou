@@ -22,6 +22,7 @@ class Doctor extends Model
         'name',
         'gender',
         'email',
+        'tel',
     ];
 
     public static function getDoctorById($doctorId)

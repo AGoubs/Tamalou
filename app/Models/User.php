@@ -30,7 +30,11 @@ class User extends Authenticatable
         'height',
         'email',
         'password',
-        'doctor_id',
+        //'doctor_id',
+        'doctor_first_name',
+        'doctor_name',
+        'doctor_email',
+        'doctor_tel',
     ];
 
     /**
@@ -53,10 +57,10 @@ class User extends Authenticatable
         'born_date' => 'datetime',
     ];
 
-    public function doctor()
+    /*public function doctor()
     {
         return $this->hasOne(Doctor::class,  '_id', 'doctor_id');
-    }
+    }*/
 
     public static function getUserById($userId)
     {
