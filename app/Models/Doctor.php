@@ -24,8 +24,8 @@ class Doctor extends Model
         'email',
     ];
 
-    public function getDoctorById($doctorId)
+    public static function getDoctorById($doctorId)
     {
-        $doctor = Doctor::where('id', $doctorId)->first();
+        return Doctor::where('id', $doctorId)->first();
     }
 }

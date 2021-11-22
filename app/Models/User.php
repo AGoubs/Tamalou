@@ -52,4 +52,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'born_date' => 'datetime',
     ];
+
+    public function doctor()
+    {
+        return $this->hasOne(Doctor::class,  '_id', 'doctor_id');
+    }
+
+    public static function getUserById($userId)
+    {
+        return User::where('_id', $userId)->first();
+    }
 }
