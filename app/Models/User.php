@@ -30,6 +30,7 @@ class User extends Authenticatable
         'height',
         'email',
         'password',
+        'pregnant',
         //'doctor_id',
         'doctor_first_name',
         'doctor_name',
