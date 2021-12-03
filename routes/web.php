@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +24,14 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+Route::get('/allUsers',
+    [UserController::class, 'showUsers']
+)->name('allUsers');
+
+Route::get('/showLoggedUser',
+    [UserController::class, 'show']
+)->middleware(['auth'])->name('showLoggedUser');
+
+Route::resource('users', UserController::class);
+Route::resource('doctor', DoctorController::class);

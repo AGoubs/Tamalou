@@ -22,9 +22,19 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
+        'first_name',
         'name',
+        'gender',
+        'born_date',
+        'weight',
+        'height',
         'email',
         'password',
+        //'doctor_id',
+        'doctor_first_name',
+        'doctor_name',
+        'doctor_email',
+        'doctor_tel',
     ];
 
     /**
@@ -44,5 +54,16 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'born_date' => 'datetime',
     ];
+
+    /*public function doctor()
+    {
+        return $this->hasOne(Doctor::class,  '_id', 'doctor_id');
+    }*/
+
+    public static function getUserById($userId)
+    {
+        return User::where('_id', $userId)->first();
+    }
 }
