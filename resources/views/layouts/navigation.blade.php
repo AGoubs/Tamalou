@@ -12,7 +12,10 @@
 
         <!-- Navigation Links -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+          <x-nav-link style="text-decoration: none" :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+            {{ __('Dashboard') }}
+          </x-nav-link>
+          <x-nav-link style="text-decoration: none" :href="route('allUsers')" :active="request()->routeIs('allUsers')">
             {{ __('Dashboard') }}
           </x-nav-link>
         </div>
@@ -43,7 +46,7 @@
 
               <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                {{ __('Log Out') }}
+                {{ __('Déconnexion') }}
               </x-dropdown-link>
             </form>
           </x-slot>

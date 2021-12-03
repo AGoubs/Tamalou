@@ -2,35 +2,38 @@
   <nav class="nav container">
     <div class="nav__logo"><img src="{{ asset('images/logo.png') }}" alt="Logo tamalou"> </div>
 
-    <div class="nav__menu" id="nav-menu">
-      <ul class="nav__list">
-        <li class="nav__item">
-          <a href="{{ route('dashboard') }}" class="nav__link active-link">
-            <i class='bx bx-home-alt nav__icon'></i>
-            <span class="nav__name">Dashboard</span>
-          </a>
-        </li>
-        <li class="nav__item">
-          <a href="{{ route('dashboard') }}" class="nav__link active-link">
-            <i class='bx bx-home-alt nav__icon'></i>
-            <span class="nav__name">Dashboard</span>
-          </a>
-        </li>
-        <li class="nav__item">
-          <a href="{{ route('dashboard') }}" class="nav__link active-link">
-            <i class='bx bx-home-alt nav__icon'></i>
-            <span class="nav__name">Dashboard</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-      <div class="sm:ml-6">
+    <div class="nav__flex">
+      <div class="nav__menu mr-5" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="{{ route('dashboard') }}" class="nav__link active-link">
+              <i class='bx bx-home-alt nav__icon'></i>
+              <span class="nav__name">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="{{ route('allUsers') }}" class="nav__link">
+              <i class='bx bx-user nav__icon'></i>
+              <span class="nav__name">Utilisateur</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="{{ route('allUsers') }}" class="nav__link">
+              <i class='bx bx-home-alt nav__icon'></i>
+              <span class="nav__name">Dashboard</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      @if (Auth::user())
+
+        <div class="sm:ml-6 mr-4">
           <x-dropdown align="right" width="48">
             <x-slot name="trigger">
               <button
                 class="flex items-center font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                <div>{{ Auth::user()->name }}</div>
 
+                <div>{{ Auth::user()->name }}</div>
                 <div class="ml-1">
                   <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                     <path fill-rule="evenodd"
@@ -53,7 +56,8 @@
             </x-slot>
           </x-dropdown>
         </div>
-     
-    <img src="assets/img/perfil.png" alt="" class="nav__img">
+      @endif
+
+    </div>
   </nav>
 </header>

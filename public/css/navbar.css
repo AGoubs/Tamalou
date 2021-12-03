@@ -257,3 +257,8 @@ img {
     margin-right: auto;
   }
 }
+
+.nav__flex {
+  display: flex;
+  justify-content: space-between;
+}
