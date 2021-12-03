@@ -16,7 +16,8 @@
             <div>
                 <x-label for="name" :value="__('Nom')" />
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required
+                    autofocus />
             </div>
 
             <!-- Email Address -->
@@ -26,23 +27,69 @@
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
 
+            <!-- Gender -->
+            <div class="mt-4">
+                <x-label for="gender" :value="__('Civilité')" />
+
+                <select id="gender"
+                    class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    name="gender" :value="old('gender')" required>
+                    <option value="0">Homme</option>
+                    <option value="1">Femme</option>
+                    <option value="2">Autre</option>
+                </select>
+            </div>
+
+            <!-- Pregnant -->
+            <div class="mt-4 hidden" id="pregnantDiv">
+                <x-label for="pregnant" :value="__('Etes vous enceinte?')" />
+
+                <select id="pregnant"
+                    class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    name="pregnant" :value="old('pregnant')" required>
+                    <option value="0" selected>Non</option>
+                    <option value="1">Oui</option>
+                </select>
+            </div>
+
+            <!-- Born date -->
+            <div class="mt-4">
+                <x-label for="born_date" :value="__('Date de naissance')" />
+
+                <x-input id="born_date" class="block mt-1 w-full" type="date" name="born_date" :value="old('born_date')"
+                    required />
+            </div>
+
+            <!-- weight -->
+            <div class="mt-4">
+                <x-label for="weight" :value="__('Poid (en KG)')" />
+
+                <x-input id="weight" class="block mt-1 w-full" type="number" name="weight" :value="old('weight')"
+                    required max="999" />
+            </div>
+
+            <!-- height -->
+            <div class="mt-4">
+                <x-label for="height" :value="__('Taille (en CM)')" />
+
+                <x-input id="height" class="block mt-1 w-full" type="number" name="height" :value="old('height')"
+                    required max="300" />
+            </div>
+
             <!-- Password -->
             <div class="mt-4">
                 <x-label for="password" :value="__('Mot de passe')" />
 
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
+                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required minlength="8"
+                    autocomplete="new-password" />
             </div>
 
             <!-- Confirm Password -->
             <div class="mt-4">
                 <x-label for="password_confirmation" :value="__('Confirmation du mot de passe')" />
 
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
+                <x-input id="password_confirmation" class="block mt-1 w-full" type="password"
+                    name="password_confirmation" required />
             </div>
 
             <div class="flex items-center justify-end mt-4">
@@ -57,3 +104,21 @@
         </form>
     </x-auth-card>
 </x-guest-layout>
+
+<script>
+    //TODO deplacer ça
+    const genderSelect = document.getElementById("gender");
+    const pregnantDiv = document.getElementById("pregnantDiv");
+    const pregnantSelect = document.getElementById("pregnant");
+
+    genderSelect.addEventListener("change", () => {
+        if (genderSelect.value == 1 || genderSelect.value == 2) {
+            pregnantDiv.classList.remove("hidden");
+        } else {
+            if (!pregnantDiv.classList.contains("hidden")) {
+                pregnantDiv.classList.add("hidden");
+                pregnantSelect.selectedIndex = 0;
+            }
+        }
+    });
+</script>
