@@ -115,6 +115,7 @@ img {
 .nav__logo {
   color: var(--title-color);
   font-weight: 600;
+  width: 60px;
 }
 
 @media screen and (max-width: 767px) {
@@ -131,6 +132,10 @@ img {
     align-content: center;
     border-radius: 1.25rem 1.25rem 0 0;
     transition: .4s;
+    align-content: flex-end;
+  }
+  .nav__logo {
+    width: 40px;
   }
 }
 
@@ -190,6 +195,9 @@ img {
   .nav__name {
     display: none;
   }
+  .nav__list {
+    margin-bottom: 2%;
+  }
 }
 
 /* For medium devices */
@@ -197,6 +205,7 @@ img {
   .nav__list {
     justify-content: center;
     column-gap: 3rem;
+    margin-bottom: 1%;
   }
 }
 
