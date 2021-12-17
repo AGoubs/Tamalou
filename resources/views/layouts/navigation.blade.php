@@ -16,7 +16,7 @@
             :active="request()->routeIs('dashboard')">
             {{ __('Dashboard') }}
           </x-nav-link>
-          <x-nav-link style="text-decoration: none" :href="route('allUsers')" :active="request()->routeIs('allUsers')">
+          <x-nav-link style="text-decoration: none" :href="route('wiki-medoc')" :active="request()->routeIs('wiki-medoc')">
             {{ __('WikiMédoc') }}
           </x-nav-link>
           <x-nav-link style="text-decoration: none" :href="route('allUsers')" :active="request()->routeIs('allUsers')">
@@ -86,7 +86,7 @@
       <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
         {{ __('Dashboard') }}
       </x-responsive-nav-link>
-      <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+      <x-responsive-nav-link :href="route('wiki-medoc')" :active="request()->routeIs('wiki-medoc')">
         {{ __('WikiMedoc') }}
       </x-responsive-nav-link>
       <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">

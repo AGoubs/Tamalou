@@ -19,6 +19,13 @@ Route::get('/', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::get('/wiki-medoc', function () {
+  return view('wiki-medoc');
+})->name('wiki-medoc');
+
+Route::get('/wiki-medoc/details', function () {
+  return view('wiki-medoc-details');
+})->name('wiki-medoc-details');
 
 Route::get('/chatbot', function () {
     return view('chatbot');
