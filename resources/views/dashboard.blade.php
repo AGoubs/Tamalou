@@ -33,7 +33,7 @@
                 </h1>
                 <p
                   class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                Le premier chatbot de diagnostique médical à porté de main. Tester le dès maintenant en cliquant sur "Démonstration"
+                Le premier chatbot de diagnostique médical à porté de main. Testez le dès maintenant en cliquant sur "Démonstration"
                 </p>
                 <div class="mt-6 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                   <div class="mt-3 sm:mt-0 sm:ml-3">
