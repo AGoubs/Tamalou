@@ -23,6 +23,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/chatbot', function () {
+    return view('chatbot');
+})->middleware(['auth'])->name('chatbot');
+
 require __DIR__.'/auth.php';
 
 Route::get('/allUsers',

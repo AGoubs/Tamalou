@@ -18,7 +18,7 @@
           <x-nav-link style="text-decoration: none" :href="route('allUsers')" :active="request()->routeIs('allUsers')">
             {{ __('WikiMédoc') }}
           </x-nav-link>
-          <x-nav-link style="text-decoration: none" :href="route('allUsers')" :active="request()->routeIs('allUsers')">
+          <x-nav-link style="text-decoration: none" :href="route('chatbot')" :active="request()->routeIs('chatbot')">
             {{ __('Chatbot') }}
           </x-nav-link>
           <x-nav-link style="text-decoration: none" :href="route('allUsers')" :active="request()->routeIs('allUsers')">
@@ -86,7 +86,7 @@
       <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
         {{ __('Premiers secours') }}
       </x-responsive-nav-link>
-      <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+      <x-responsive-nav-link :href="route('chatbot')" :active="request()->routeIs('chatbot')">
         {{ __('Chatbot') }}
       </x-responsive-nav-link>
     </div>
