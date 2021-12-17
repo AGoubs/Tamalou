@@ -64,9 +64,6 @@
                 </select>
             </div>
 
-            {{$user->born_date}}
-             {{$user->born_date->toDateTime()->format('d/m/Y')}}
-
             <!-- Born date -->
             <div class="mt-4">
                 <x-label for="born_date" :value="__('Date de naissance')" />
