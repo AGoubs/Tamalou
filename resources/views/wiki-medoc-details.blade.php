@@ -1,62 +1,67 @@
 <x-app-layout>
-  <!-- This example requires Tailwind CSS v2.0+ -->
-  <div class="flex flex-col">
-    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-      <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-          <table class="min-w-full divide-y divide-gray-200">
+  <div class="pt-12">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+      <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+        <div class="p-6 bg-white border-b border-gray-200">
+          ABUFENE 400mg CPR B/30
+          <br>
+          <br>
+          Médicament allopathique en libre accès
+          <table class="max-w-6xl divide-y divide-gray-200 mt-6">
             <thead class="bg-gray-50">
               <tr>
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Dénomination commerciale
+                  Substance active
                 </th>
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Type
-                </th>
-                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Description
+                  Code CIP/ACL
                 </th>
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Conditionnement
                 </th>
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Role
+                  Disponibilité
                 </th>
-                <th scope="col" class="relative px-6 py-3">
-                  <span class="sr-only">Edit</span>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Laboratoire
                 </th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Indications thérapeutiques
+                </th>
+
               </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
-              @for ($i = 0; $i < 15; $i++)
-                  
               <tr>
                 <td class="px-6 py-4 whitespace-nowrap">
                   <div class="flex items-center">
                     <div class="ml-4">
                       <div class="text-sm font-medium text-gray-900">
-                        Jane ABUFENE 
+                        bêta-alanine
                       </div>
-                      <div class="text-sm text-gray-500">
-                        400mg
-                      </div>
+                     
                     </div>
                   </div>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap">
-                  <div class="text-sm text-gray-900"> comprimé orodispersible</div>
+                  <div class="text-sm text-gray-900">	3400933528928</div>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap">
-                  Médicament allopathique en libre accès
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   Boite de 30 comprimés
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                  <a href="#" class="text-indigo-600 hover:text-indigo-900">Voir plus</a>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  En ville
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                	Laboratoires Bouchara-Recordati
+                  <div class="text-sm text-gray-500">
+                    Tél.: 01 45 19 10 00
+                  </div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  Utilisé dans les bouffées de chaleur
                 </td>
               </tr>
-              @endfor
 
               <!-- More people... -->
             </tbody>
@@ -64,6 +69,4 @@
         </div>
       </div>
     </div>
-  </div>
-
 </x-app-layout>
