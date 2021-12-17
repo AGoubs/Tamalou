@@ -41,15 +41,13 @@
             </div>
             <!-- Remember Me -->
             <div class="block my-2 ml-1">
-              <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
-                {{ __('Pas de compte ?') }}
-            </a>
+             
             </div>
 
             <div class="flex items-center justify-between mt-4">
-                <x-button class="">
-                    {{ __('Mode invité') }}
-                </x-button>
+              <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                {{ __('Pas de compte ?') }}
+            </a>
                 <x-button class="ml-3">
                     {{ __('Connexion') }}
                 </x-button>

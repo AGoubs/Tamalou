@@ -9,11 +9,11 @@
    </div>
  </footer>
 
- <script src="http://localhost:3000/assets/modules/channel-web/inject.js"></script>
+ <script src="{{ env('BOT_HOST') }}/assets/modules/channel-web/inject.js"></script>
  <script>
    window.botpressWebChat.init({
-     host: 'http://localhost:3000',
-     botId: 'tamalou', //The ID for your bot
+     host: '{{ env('BOT_HOST') }}',
+     botId: '{{ env('BOT_NAME') }}', //The ID for your bot
      botName: 'Tamalou', // Name of your bot
      botAvatarUrl: null, // Default avatar URL of the image (e.g., 'https://avatars3.githubusercontent.com/u/1315508?v=4&s=400' )
      botConvoDescription: "Bot d'automédication",
@@ -32,11 +32,5 @@
      extraStylesheet: '/assets/modules/channel-web/examples/my-theme.css', // Define a custom style sheet to override Botpress styling
      showPoweredBy: false,
      recentConversationLifetime: "5 seconds"
-   })
-
-   window.addEventListener('message', message => {
-     if (message.data.userId) {
-       console.log(`The User ID is ` + message.data.userId)
-     }
    })
  </script>
