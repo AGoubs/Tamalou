@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout class="mb-8">
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -69,7 +69,7 @@
                 <x-label for="born_date" :value="__('Date de naissance')" />
 
                 <x-input id="born_date" class="block mt-1 w-full" type="date" name="born_date"
-                    :value="old('born_date', $user->born_date->toDateTime()->format('d/m/Y'))" required />
+                    :value="old('born_date', $user->born_date->toDateTime()->format('Y-m-d'))" required />
             </div>
 
             <!-- weight -->

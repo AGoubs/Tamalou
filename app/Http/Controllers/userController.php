@@ -63,6 +63,6 @@ class UserController extends Controller
 
         $user->fill($request->all())->save();
 
-        return redirect('dashboard');
+        return redirect('/');
     }
 }
