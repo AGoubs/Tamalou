@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout class="mb-8">
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
