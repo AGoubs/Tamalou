@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SymptomesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +41,10 @@ Route::get('/allUsers',
 Route::get('/showLoggedUser',
     [UserController::class, 'show']
 )->middleware(['auth'])->name('showLoggedUser');
+
+Route::post('/traitement',
+    [SymptomesController::class, 'treatData']
+)->name('traitement');
 
 Route::resource('users', UserController::class);
 Route::resource('doctor', DoctorController::class);
