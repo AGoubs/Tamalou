@@ -2,12 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Illuminate\Http\Request;
 
 class SymptomesController extends Controller
 {
-    public function treatData(Request $symptomes)
+    public function treatData(Request $data)
     {
-        return 'je suis passé dans le traitement';
+        try {
+            $symptomes = $data['symptomes'];
+
+            $fp = fopen($_SERVER['DOCUMENT_ROOT'] . "/userSymptomes.txt", "wb");
+            fwrite($fp, $symptomes);
+            fclose($fp);
+
+            $res = exec("python3 traitement.py");
+
+            return $res;
+        } catch (Exception $err) {
+            return $err;
+        }
     }
 }

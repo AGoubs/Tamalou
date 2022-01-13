@@ -42,7 +42,7 @@ Route::get('/showLoggedUser',
     [UserController::class, 'show']
 )->middleware(['auth'])->name('showLoggedUser');
 
-Route::post('/traitement',
+Route::post('/traitement', 
     [SymptomesController::class, 'treatData']
 )->name('traitement');
 

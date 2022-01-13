@@ -1,4 +1,4 @@
- <footer id="footer" class="relative bg-white">
+ {{-- <footer id="footer" class="relative bg-white">
    <div tabindex="0" aria-label="footer" class="focus:outline-none border-b border-gray-200 dark:border-gray-700"></div>
    <div class="py-12 flex flex-col justify-center items-center">
      <a class="focus:outline-none" tabindex="0" role="link" aria-label="home link" href="javascript:void(0)">
@@ -12,10 +12,12 @@
  <script src="{{ env('BOT_HOST') }}/assets/modules/channel-web/inject.js"></script>
  <script>
    window.botpressWebChat.init({
-     host: '{{ env('
-     BOT_HOST ') }}',
-     botId: '{{ env('
-     BOT_ID ') }}',
+    //  host: '{{ env('
+    //  BOT_HOST ') }}',
+    //  botId: '{{ env('
+    //  BOT_ID ') }}',
+     host: 'http://localhost:3000',
+     botId: 'tamalou',
      botName: 'Tamalou', // Name of your bot
      botAvatarUrl: null, // Default avatar URL of the image (e.g., 'https://avatars3.githubusercontent.com/u/1315508?v=4&s=400' )
      botConvoDescription: "Bot d'automédication",
