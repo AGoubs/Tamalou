@@ -5,16 +5,16 @@
       <div class="flex">
         <!-- Logo -->
         <div class="flex-shrink-0 flex items-center">
-          <a href="{{ route('dashboard') }}">
+          <a href="{{ route('accueil') }}">
             <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
           </a>
         </div>
 
         <!-- Navigation Links -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link style="text-decoration: none" :href="route('dashboard')"
-            :active="request()->routeIs('dashboard')">
-            {{ __('Dashboard') }}
+          <x-nav-link style="text-decoration: none" :href="route('accueil')"
+            :active="request()->routeIs('accueil')">
+            {{ __('Accueil') }}
           </x-nav-link>
           <x-nav-link style="text-decoration: none" :href="route('wiki-medoc')" :active="request()->routeIs('wiki-medoc')">
             {{ __('WikiMédoc') }}
@@ -85,13 +85,13 @@
   <!-- Responsive Navigation Menu -->
   <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
     <div class="pt-2 pb-3 space-y-1">
-      <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-        {{ __('Dashboard') }}
+      <x-responsive-nav-link :href="route('accueil')" :active="request()->routeIs('accueil')">
+        {{ __('accueil') }}
       </x-responsive-nav-link>
       <x-responsive-nav-link :href="route('wiki-medoc')" :active="request()->routeIs('wiki-medoc')">
         {{ __('WikiMedoc') }}
       </x-responsive-nav-link>
-      <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+      <x-responsive-nav-link :href="route('accueil')" :active="request()->routeIs('accueil')">
         {{ __('Premiers secours') }}
       </x-responsive-nav-link>
     </div>

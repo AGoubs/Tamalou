@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SymptomesController;
@@ -17,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
-})->name('dashboard');
+    return view('accueil');
+})->name('accueil');
 
 Route::get('/wiki-medoc', function () {
   return view('wiki-medoc');
@@ -48,3 +49,7 @@ Route::post('/traitement',
 
 Route::resource('users', UserController::class);
 Route::resource('doctor', DoctorController::class);
+
+Route::prefix('api')->group(function () {
+  Route::get('covid', [ApiController::class, 'covid'])->name('covid');
+});

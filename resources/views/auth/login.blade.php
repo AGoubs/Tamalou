@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="{{ route('dashboard') }}">
+            <a href="{{ route('accueil') }}">
                 <x-application-logo-big class="w-20 h-20 fill-current text-gray-500" />
             </a>
         </x-slot>

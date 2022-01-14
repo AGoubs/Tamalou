@@ -6,7 +6,7 @@
       <div class="nav__menu mr-5" id="nav-menu">
         <ul class="nav__list">
           <li class="nav__item">
-            <a href="{{ route('dashboard') }}" class="nav__link active-link">
+            <a href="{{ route('accueil') }}" class="nav__link active-link">
               <i class='bx bx-home-alt nav__icon'></i>
               <span class="nav__name">Dashboard</span>
             </a>
