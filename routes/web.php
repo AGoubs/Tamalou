@@ -21,6 +21,10 @@ Route::get('/', function () {
     return view('accueil');
 })->name('accueil');
 
+Route::get('/dashboard', function () {
+  return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
 Route::get('/wiki-medoc', function () {
   return view('wiki-medoc');
 })->name('wiki-medoc');
