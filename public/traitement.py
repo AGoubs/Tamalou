@@ -2,9 +2,8 @@ import spacy
 import pandas as pd
 import json
 import unicodedata
- 
-try:
 
+try:
     nlp = spacy.load("fr_core_news_lg")
 
     userSymptomesTxt = open("userSymptomes.txt", "r")
@@ -17,10 +16,8 @@ try:
     nom = list(token.lemma_ for token in doc if token.tag_ == "NOUN")
     nom_propre = list(token.lemma_ for token in doc if token.tag_ == "PROPN")
 
-
     def strip_accents(s):
         return''.join((c for c in unicodedata.normalize('NFD', s) if unicodedata.category(c) != 'Mn'))
-
 
     nom_list = []
     for item in nom:
@@ -37,9 +34,9 @@ try:
                 nlp_nom = nlp(nom_to_nlp)
                 similarity = nlp_nom.similarity(nlp_synonyme)
                 if similarity > 0.8:
-                    resultOfJsonComparaison.append(loadedBodyPartJson[bodyPart][0])
+                    resultOfJsonComparaison.append(
+                        loadedBodyPartJson[bodyPart][0])
                     break
-
 
     bodyPartJson.close()
 
@@ -57,9 +54,11 @@ try:
     for data1 in loadedSymptomesToMedecineJson:
         for data2 in dataToFindInDataset:
             if data1 == data2 and data2 == 'mal_de_tete':
-                possibleMedecineToTake.append(loadedSymptomesToMedecineJson[data2])
+                possibleMedecineToTake.append(
+                    loadedSymptomesToMedecineJson[data2])
             if data1 == data2 and data2 == 'mal_de_ventre':
-                possibleMedecineToTake.append(loadedSymptomesToMedecineJson[data2])
+                possibleMedecineToTake.append(
+                    loadedSymptomesToMedecineJson[data2])
 
     symptomesToMedecineJson.close()
 
@@ -70,7 +69,6 @@ try:
         dataset["Indexes"] = dataset[el].where(dataset[el] == 1)
         dataset.dropna(subset=["Indexes"], inplace=True)
 
-
     def listToString(s):
         str1 = ""
 
@@ -80,7 +78,6 @@ try:
         str1 = str1[:-1]
 
         return str1
-
 
     resSymptomes = listToString(
         dataToFindInDataset)
