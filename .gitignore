@@ -14,3 +14,4 @@ yarn-error.log
 /.vscode
 .env
 /public/userSymptomes.txt
+config/database.php
