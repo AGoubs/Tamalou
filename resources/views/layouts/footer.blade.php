@@ -12,10 +12,6 @@
  <script src="{{ env('BOT_HOST') }}/assets/modules/channel-web/inject.js"></script>
  <script>
    window.botpressWebChat.init({
-    //  host: '{{ env('
-    //  BOT_HOST ') }}',
-    //  botId: '{{ env('
-    //  BOT_ID ') }}',
      host: 'http://localhost:3000',
      botId: 'tamalou',
      botName: 'Tamalou', // Name of your bot

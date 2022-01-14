@@ -1,0 +1,6 @@
+{
+    "head": ["tete", "crane"],
+    "eye": ["yeux", "oeil", "pupille"],
+    "noze": ["nez", "narines"],
+    "stomach": ["ventre", "bide", "estomac"]
+}
