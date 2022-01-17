@@ -16,11 +16,11 @@ class SymptomesController extends Controller
             fwrite($fp, $symptomes);
             fclose($fp);
 
-            $res = exec("python3 traitement.py");
+            $res = exec("python3 {$_SERVER['DOCUMENT_ROOT']}/traitement.py");
 
             return $res;
         } catch (Exception $err) {
-            return $err;
+            return `error at: $err`;
         }
     }
 }
