@@ -83,7 +83,6 @@ try:
         dataToFindInDataset)
     resSymptomes = resSymptomes.replace("_", " ")
     resSymptomes = resSymptomes[:-1]
-    print(resSymptomes)
 
     resMedecine = listToString(possibleMedecineToTake)
     resMedecine = resMedecine[:-1]
