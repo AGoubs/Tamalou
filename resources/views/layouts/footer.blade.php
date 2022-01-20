@@ -9,10 +9,10 @@
    </div>
  </footer> --}}
 
- <script src="{{ env('BOT_HOST') }}/assets/modules/channel-web/inject.js"></script>
+ <script src="http://localhost:3000/assets/modules/channel-web/inject.js"></script>
  <script>
    window.botpressWebChat.init({
-     host: 'http://192.168.1.101:3000',
+     host: 'http://localhost:3000',
      botId: 'tamalou',
      botName: 'Tamalou', // Name of your bot
      botAvatarUrl: null, // Default avatar URL of the image (e.g., 'https://avatars3.githubusercontent.com/u/1315508?v=4&s=400' )
