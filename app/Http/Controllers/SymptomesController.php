@@ -16,7 +16,7 @@ class SymptomesController extends Controller
             fwrite($fp, $symptomes);
             fclose($fp);
 
-            $res = exec("python3 {$_SERVER['DOCUMENT_ROOT']}/traitement.py");
+            $res = exec("python3.9 {$_SERVER['DOCUMENT_ROOT']}/traitement.py");
 
             return $res;
         } catch (Exception $err) {
