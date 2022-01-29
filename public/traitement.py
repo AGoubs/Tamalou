@@ -67,19 +67,19 @@ try:
 
     symptomesToMedecineJson.close()
 
-    #dataset = pd.read_csv('symptomes_dataset.csv', delimiter=',',
+    # dataset = pd.read_csv('symptomes_dataset.csv', delimiter=',',
     #                      encoding="ISO-8859-1", encoding_errors='ignore')
     dataset = pd.read_csv('treatedDataset.csv', delimiter=',',
                           encoding="ISO-8859-1", encoding_errors='ignore')
-    
+
     deseases = []
     for el in dataToFindInDataset:
         dataset["Indexes"] = dataset[el].where(dataset[el] == 1)
-        
-    i=dataset[dataset['Indexes']== 1]
+
+    i = dataset[dataset['Indexes'] == 1]
     if len(i) < 5:
         deseases.append(i.iloc[-1][-2])
-            
+
     dataset.dropna(subset=["Indexes"], inplace=True)
 
     def listToString(s):
@@ -99,23 +99,23 @@ try:
 
     resMedecine = listToString(possibleMedecineToTake)
     resMedecine = resMedecine[:-1]
-    
+
     resDeseases = listToString(deseases)
     resDeseases = resDeseases[:-1]
 
     if len(dataset["Indexes"]) > 5:
         resume = 'Vos symptomes correspondent à ' + \
-        str(len(dataset["Indexes"])) + ' maladies. Néanmoins, pour soulager: ' + \
-        resSymptomes + '; vous pouvez prendre: ' + resMedecine + '.'
+            str(len(dataset["Indexes"])) + ' maladies. Néanmoins, pour soulager: ' + \
+            resSymptomes + '; vous pouvez prendre: ' + resMedecine + '.'
         print(resume)
     elif len(dataset["Indexes"]) <= 5:
         resume = 'Vous avez surement une de ces maladies: ' + resDeseases + '. Pour soulager: ' + \
-        resSymptomes + '; vous pouvez prendre: ' + resMedecine + '.'
+            resSymptomes + '; vous pouvez prendre: ' + resMedecine + '.'
         print(resume)
     else:
-        resume = "Désolé, nous n'avons pas trouvé de maladies correspondantes aux symptomes que vous avez renseigné, je crois que j'ai encore besoin d'entrainement ^^'" 
+        resume = "Désolé, nous n'avons pas trouvé de maladies correspondantes aux symptomes que vous avez renseigné, je crois que j'ai encore besoin d'entrainement ^^'"
         print(resume)
-        
+
     dataToFindInDataset = []
     possibleMedecineToTake = []
     resultOfJsonComparaison = []
