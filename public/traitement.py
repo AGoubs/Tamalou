@@ -46,6 +46,8 @@ try:
             dataToFindInDataset.append('mal_de_tete')
         if data == 'ventre':
             dataToFindInDataset.append('mal_de_ventre')
+        if data == 'gout':
+            dataToFindInDataset.append('perte_de_gout')
 
     symptomesToMedecineJson = open('symptomesToMedecine.json')
     loadedSymptomesToMedecineJson = json.load(symptomesToMedecineJson)
@@ -59,15 +61,26 @@ try:
             if data1 == data2 and data2 == 'mal_de_ventre':
                 possibleMedecineToTake.append(
                     loadedSymptomesToMedecineJson[data2])
+            if data1 == data2 and data2 == 'perte_de_gout':
+                possibleMedecineToTake.append(
+                    loadedSymptomesToMedecineJson[data2])
 
     symptomesToMedecineJson.close()
 
-    dataset = pd.read_csv('symptomes_dataset.csv', delimiter=',',
+    #dataset = pd.read_csv('symptomes_dataset.csv', delimiter=',',
+    #                      encoding="ISO-8859-1", encoding_errors='ignore')
+    dataset = pd.read_csv('treatedDataset.csv', delimiter=',',
                           encoding="ISO-8859-1", encoding_errors='ignore')
-
+    
+    deseases = []
     for el in dataToFindInDataset:
         dataset["Indexes"] = dataset[el].where(dataset[el] == 1)
-        dataset.dropna(subset=["Indexes"], inplace=True)
+        
+    i=dataset[dataset['Indexes']== 1]
+    if len(i) < 5:
+        deseases.append(i.iloc[-1][-2])
+            
+    dataset.dropna(subset=["Indexes"], inplace=True)
 
     def listToString(s):
         str1 = ""
@@ -86,12 +99,23 @@ try:
 
     resMedecine = listToString(possibleMedecineToTake)
     resMedecine = resMedecine[:-1]
+    
+    resDeseases = listToString(deseases)
+    resDeseases = resDeseases[:-1]
 
-    resume = 'Vos symptomes correspondent à ' + \
+    if len(dataset["Indexes"]) > 5:
+        resume = 'Vos symptomes correspondent à ' + \
         str(len(dataset["Indexes"])) + ' maladies. Néanmoins, pour soulager: ' + \
         resSymptomes + '; vous pouvez prendre: ' + resMedecine + '.'
-    print(resume)
-
+        print(resume)
+    elif len(dataset["Indexes"]) <= 5:
+        resume = 'Vous avez surement une de ces maladies: ' + resDeseases + '. Pour soulager: ' + \
+        resSymptomes + '; vous pouvez prendre: ' + resMedecine + '.'
+        print(resume)
+    else:
+        resume = "Désolé, nous n'avons pas trouvé de maladies correspondantes aux symptomes que vous avez renseigné, je crois que j'ai encore besoin d'entrainement ^^'" 
+        print(resume)
+        
     dataToFindInDataset = []
     possibleMedecineToTake = []
     resultOfJsonComparaison = []
