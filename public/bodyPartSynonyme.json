@@ -1,6 +1,7 @@
 {
     "head": ["tete", "crane"],
     "eye": ["yeux", "oeil", "pupille"],
-    "noze": ["nez", "narines"],
-    "stomach": ["ventre", "bide", "estomac"]
+    "noze": ["nez", "narines", "nez bouchee", "nez bouche"],
+    "stomach": ["ventre", "bide", "estomac"],
+    "taste": ["gout"]
 }
