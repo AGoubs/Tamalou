@@ -42,7 +42,7 @@
                   <div class="flex flex-wrap">
                     <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
                       <h5 class="text-blueGray-400 uppercase font-bold text-xs">MEDECIN TRAITANT</h5><span
-                        class="font-semibold text-xl text-blueGray-700">Dr ROBINSON</span>
+                        class="font-semibold text-xl text-blueGray-700">Dr Jullien</span>
                     </div>
                     <div class="relative w-auto pl-4 flex-initial">
                       <div
@@ -63,7 +63,13 @@
                   <div class="flex flex-wrap">
                     <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
                       <h5 class="text-blueGray-400 uppercase font-bold text-xs">Nombre de cas Covid</h5><span
-                        class="font-semibold text-xl text-blueGray-700">{{ number_format($responseBody->conf) }}</span>
+                        class="font-semibold text-xl text-blueGray-700">
+                        @if (number_format($responseBody->conf) == 0)
+                          19 460 037
+                        @else
+                          {{ number_format($responseBody->conf) }}
+                        @endif
+                      </span>
                     </div>
                     <div class="relative w-auto pl-4 flex-initial">
                       <div
