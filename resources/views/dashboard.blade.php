@@ -73,7 +73,7 @@
                     </div>
                   </div>
                   <p class="text-sm text-blueGray-400 mt-4"><span class="text-red-500 mr-2"><i
-                        class="fas fa-arrow-up"></i> 3.48%</span><span class="whitespace-nowrap">Depuis la semaine
+                        class="fas fa-arrow-up"></i> 18.02%</span><span class="whitespace-nowrap">Depuis la semaine
                       dernière</span></p>
                 </div>
               </div>

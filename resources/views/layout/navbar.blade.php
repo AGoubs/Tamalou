@@ -12,13 +12,13 @@
             </a>
           </li>
           <li class="nav__item">
-            <a href="{{ route('allUsers') }}" class="nav__link">
+            <a href="{{ route('first-aid') }}" class="nav__link">
               <i class='bx bx-user nav__icon'></i>
               <span class="nav__name">Utilisateur</span>
             </a>
           </li>
           <li class="nav__item">
-            <a href="{{ route('allUsers') }}" class="nav__link">
+            <a href="{{ route('first-aid') }}" class="nav__link">
               <i class='bx bx-home-alt nav__icon'></i>
               <span class="nav__name">Dashboard</span>
             </a>

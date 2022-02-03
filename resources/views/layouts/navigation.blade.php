@@ -25,7 +25,7 @@
           <x-nav-link style="text-decoration: none" :href="route('wiki-medoc')" :active="request()->routeIs('wiki-medoc')">
             {{ __('WikiMédoc') }}
           </x-nav-link>
-          <x-nav-link style="text-decoration: none" :href="route('allUsers')" :active="request()->routeIs('allUsers')">
+          <x-nav-link style="text-decoration: none" :href="route('first-aid')" :active="request()->routeIs('first-aid')">
             {{ __('Premiers secours') }}
           </x-nav-link>
         </div>

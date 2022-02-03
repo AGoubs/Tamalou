@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('accueil',);
+  return view('accueil',);
 })->name('accueil');
 
 Route::get('dashboard', [DashboardController::class, 'covid'])->middleware(['auth'])->name('dashboard');
@@ -33,21 +33,27 @@ Route::get('/wiki-medoc/details', function () {
 })->name('wiki-medoc-details');
 
 Route::get('/chatbot', function () {
-    return view('chatbot');
+  return view('chatbot');
 })->middleware(['auth'])->name('chatbot');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
-Route::get('/allUsers',
-    [UserController::class, 'showUsers']
-)->name('allUsers');
+Route::get('/first-aid', function () {
+  return view('first-aid');
+})->name('first-aid');
 
-Route::get('/showLoggedUser',
-    [UserController::class, 'show']
+Route::get('/first-aid/pls', function () {
+  return view('first-aid.pls');
+})->name('first-aid.pls');
+
+Route::get(
+  '/showLoggedUser',
+  [UserController::class, 'show']
 )->middleware(['auth'])->name('showLoggedUser');
 
-Route::post('/traitement', 
-    [SymptomesController::class, 'treatData']
+Route::post(
+  '/traitement',
+  [SymptomesController::class, 'treatData']
 )->name('traitement');
 
 Route::resource('users', UserController::class);

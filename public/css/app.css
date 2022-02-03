@@ -188577,3 +188577,6 @@ select {
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
