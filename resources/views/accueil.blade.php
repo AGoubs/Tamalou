@@ -227,7 +227,7 @@
                 src="{{ asset('images/vico.jpg') }}">
               <div class="flex-grow">
                 <h2 class="text-gray-900 title-font font-medium">Victor Jullien</h2>
-                <p class="text-gray-500">Beta Tester</p>
+                <p class="text-gray-500">Docteur TAMALOU</p>
               </div>
             </div>
           </div>
