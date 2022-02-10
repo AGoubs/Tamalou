@@ -20,7 +20,7 @@ class ApiController extends Controller
     public function covid()
     {
         $client = new Client();
-        $url = "https://coronavirusapifr.herokuapp.com/data/live/france";
+        $url = "https://data.opendatasoft.com/api/records/1.0/search/?dataset=donnees-hospitalieres-covid-19-dep-france%40public&facet=date&facet=region_min&facet=nom_dep_min&timezone=Europe%2FParis";
 
         $params = [
             //If you have any Params Pass here

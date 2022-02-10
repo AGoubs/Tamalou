@@ -64,10 +64,10 @@
                     <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
                       <h5 class="text-blueGray-400 uppercase font-bold text-xs">Nombre de cas Covid</h5><span
                         class="font-semibold text-xl text-blueGray-700">
-                        @if (number_format($responseBody->conf) == 0)
+                        @if (number_format($responseBody['nhits']) == 0)
                           19 460 037
                         @else
-                          {{ number_format($responseBody->conf) }}
+                          {{ number_format($responseBody['nhits']) }}
                         @endif
                       </span>
                     </div>
@@ -89,9 +89,9 @@
                 <div class="flex-auto p-4">
                   <div class="flex flex-wrap">
                     <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
-                      <h5 class="text-blueGray-400 uppercase font-bold text-xs">Nombre de nouveaux cas confirmés</h5>
+                      <h5 class="text-blueGray-400 uppercase font-bold text-xs">Nombre de personnes hospitalisée Rhône</h5>
                       <span
-                        class="font-semibold text-xl text-blueGray-700">{{ number_format($responseBody->conf_j1) }}</span>
+                        class="font-semibold text-xl text-blueGray-700"> {{ number_format($responseBody['records'][0]['fields']['day_hosp']) }}</span>
                     </div>
                     <div class="relative w-auto pl-4 flex-initial">
                       <div
