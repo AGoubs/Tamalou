@@ -32,6 +32,10 @@ Route::get('/wiki-medoc/details', function () {
   return view('wiki-medoc-details');
 })->name('wiki-medoc-details');
 
+Route::get('/wiki-medoc/details/doliprane', function () {
+  return view('wikimedoc.doliprane');
+})->name('wikimedoc.doliprane');
+
 Route::get('/chatbot', function () {
   return view('chatbot');
 })->middleware(['auth'])->name('chatbot');
@@ -45,6 +49,12 @@ Route::get('/first-aid', function () {
 Route::get('/first-aid/pls', function () {
   return view('first-aid.pls');
 })->name('first-aid.pls');
+Route::get('/first-aid/etouffement', function () {
+  return view('first-aid.etouffement');
+})->name('first-aid.etouffement');
+Route::get('/first-aid/pcr', function () {
+  return view('first-aid.pcr');
+})->name('first-aid.pcr');
 
 Route::get(
   '/showLoggedUser',

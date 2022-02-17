@@ -28,7 +28,7 @@
                 </tr>
               </thead>
               <tbody class="bg-white divide-y divide-gray-200">
-                @for ($i = 0; $i < 15; $i++)
+                @for ($i = 0; $i < 1; $i++)
 
                   <tr>
                     <td class="px-6 py-4 whitespace-nowrap">
@@ -54,6 +54,33 @@
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                       <a href="{{ route('wiki-medoc-details') }}" class="text-indigo-600 hover:text-indigo-900">Voir
+                        plus</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <div class="flex items-center">
+                        <div class="ml-4">
+                          <div class="text-sm font-medium text-gray-900">
+                            DOLIPRANE
+                          </div>
+                          <div class="text-sm text-gray-500">
+                            100mg
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <div class="text-sm text-gray-900"> Solution buvable</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      Médicament antalgiques en libre accès
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      Sachet-dose 12 Sachets
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                      <a href="{{ route('wikimedoc.doliprane') }}" class="text-indigo-600 hover:text-indigo-900">Voir
                         plus</a>
                     </td>
                   </tr>

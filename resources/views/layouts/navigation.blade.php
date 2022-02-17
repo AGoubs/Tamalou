@@ -50,9 +50,6 @@
               </button>
             </x-slot>
             <x-slot name="content">
-              <x-dropdown-link style="text-decoration: none" :href="route('users.edit', ['user' => Auth::id()])">
-                {{ __('Profil') }}
-              </x-dropdown-link>
               <!-- Authentication -->
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
@@ -94,9 +91,11 @@
       <x-responsive-nav-link :href="route('accueil')" :active="request()->routeIs('accueil')">
         {{ __('Accueil') }}
       </x-responsive-nav-link>
+      @if (Auth::user())
       <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
         {{ __('Dashboard') }}
       </x-responsive-nav-link>
+      @endif
       <x-responsive-nav-link :href="route('wiki-medoc')" :active="request()->routeIs('wiki-medoc')">
         {{ __('WikiMedoc') }}
       </x-responsive-nav-link>
